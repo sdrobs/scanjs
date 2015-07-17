@@ -32,54 +32,6 @@
     "threat": "Execution Sink"
   },
   {
-    "name": "setTimeout",
-    "source": "setTimeout()",
-    "testhit": "setTimeout('jsCode'+usercontrolledVal ,timeMs)",
-    "testmiss": "setTimeout",
-    "desc": "Calling setTimeout with a first argument as string (or string concatenation) with user input may lead to XSS",
-    "threat": "Execution Sink"
-  },
-  {
-    "name": "global.setTimeout",
-    "source": "$_any.setTimeout()",
-    "testhit": "global.setTimeout('jsCode'+usercontrolledVal ,timeMs)",
-    "testmiss": "setTimeout",
-    "desc": "Calling setTimeout with a first argument as string (or string concatenation) with user input may lead to XSS",
-    "threat": "Execution Sink"
-  },
-  {
-    "name": "setInterval",
-    "source": "setInterval()",
-    "testhit": "setInterval('jsCode'+usercontrolledVal ,timMs)",
-    "testmiss": "setInterval",
-    "desc": "Calling setInterval with a first argument as string (or string concatenation) with user input may lead to XSS",
-    "threat": "Execution Sink"
-  },
-  {
-    "name": "global.setInterval",
-    "source": "$_any.setInterval()",
-    "testhit": "global.setInterval('jsCode'+usercontrolledVal ,timMs)",
-    "testmiss": "setInterval",
-    "desc": "Calling setInterval with a first argument as string (or string concatenation) with user input may lead to XSS",
-    "threat": "Execution Sink"
-  },
-  {
-    "name": "setImmediate",
-    "source": "setImmediate()",
-    "testhit": "setImmediate('jsCode'+usercontrolledVal )",
-    "testmiss": "setImmediate",
-    "desc": "Calling setImmediate with a first argument as string (or string concatenation) with user input may lead to XSS",
-    "threat": "Execution Sink"
-  },
-  {
-    "name": "global.setImmediate",
-    "source": "$_any.setImmediate()",
-    "testhit": "global.setImmediate('jsCode'+usercontrolledVal )",
-    "testmiss": "setImmediate",
-    "desc": "Calling setImmediate with a first argument as string (or string concatenation) with user input may lead to XSS",
-    "threat": "Execution Sink"
-  },
-  {
     "name": "execScript",
     "source": "execScript()",
     "testhit": "execScript('jsCode'+usercontrolledVal ,'JScript')",
@@ -240,19 +192,19 @@
     "threat": ""
   },
   {
-    "name": "localStorage",
-    "source": "localStorage",
+    "name": "localStorage.setItem()",
+    "source": "localStorage.setItem()",
     "testhit": "localStorage.setItem('name', 'user1'); ",
     "testmiss": " 'localStorage'",
-    "desc": "Client-side data storage.",
+    "desc": "Setting localStorage with user input can lead to XSS",
     "threat": ""
   },
   {
-    "name": "sessionStorage",
-    "source": "sessionStorage",
+    "name": "sessionStorage.setItem()",
+    "source": "sessionStorage.setItem()",
     "testhit": "sessionStorage.setItem('name', 'user1'); ",
     "testmiss": " 'sessionStorage'",
-    "desc": "Client-side data storage.",
+    "desc": "Setting localStorage with user input can lead to XSS",
     "threat": ""
   },
   {
@@ -264,19 +216,19 @@
     "threat": ""
   },
   {
-    "name": "localStorage",
-    "source": "$_any.localStorage",
+    "name": "localStorage.setItem()",
+    "source": "$_any.localStorage.setItem()",
     "testhit": "window.localStorage.setItem('name', 'user1'); ",
     "testmiss": " 'localStorage'",
-    "desc": "Client-side data storage.",
+    "desc": "Setting localStorage with user input can lead to XSS",
     "threat": ""
   },
   {
-    "name": "sessionStorage",
-    "source": "$_any.sessionStorage",
+    "name": "sessionStorage.setItem()",
+    "source": "$_any.sessionStorage.setItem()",
     "testhit": "window.sessionStorage.setItem('name', 'user1'); ",
     "testmiss": " 'sessionStorage'",
-    "desc": "Client-side data storage.",
+    "desc": "Setting localStorage with user input can lead to XSS",
     "threat": ""
   },
   {
@@ -630,14 +582,6 @@
     "testmiss": "",
     "desc": "Usage of sensitive API",
     "threat": ""
-  },
-  {
-    "name": "input-manage permission",
-    "source": "$_any.mgmt.hide()",
-    "testhit": "navigator.mozInputMethod.mgmt.hide()",
-    "testmiss": "",
-    "desc": "Usage of sensitive API",
-    "threat": "Certified API"
   },
   {
     "name": "mobileconnection permission",
